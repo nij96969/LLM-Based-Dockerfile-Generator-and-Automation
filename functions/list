@@ -1,0 +1,7 @@
+REPOSITORY     TAG       IMAGE ID       CREATED         SIZE
+treeubuntu     2         f9cf70236c69   4 days ago      129MB
+new_image      latest    fd515c68b9ad   6 days ago      77.9MB
+ubuntu_pyton   latest    e19d8c8a5c80   7 days ago      157MB
+ubuntu         latest    ca2b0f26964c   6 weeks ago     77.9MB
+nginx          latest    92b11f67642b   8 weeks ago     187MB
+hello-world    latest    d2c94e258dcb   11 months ago   13.3kB

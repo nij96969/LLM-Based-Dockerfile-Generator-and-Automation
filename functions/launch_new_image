@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -dit new_image

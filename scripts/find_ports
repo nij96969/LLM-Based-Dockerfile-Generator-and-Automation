@@ -1,0 +1,19 @@
+#!/bin/bash
+
+find_available_port() {
+    local start_port=${1:-8080}
+    local end_port=${2:-65535}
+
+    # Iterate over ports from start_port to end_port
+    for ((port=start_port; port<=end_port; port++)); do
+        # Check if port is in use using netcat
+        nc -z localhost $port >/dev/null 2>&1 || { echo $port; return; }
+    done
+
+    # If no available ports found
+    return -1
+}
+
+available_port=$(find_available_port "$@")
+
+echo "$available_port"

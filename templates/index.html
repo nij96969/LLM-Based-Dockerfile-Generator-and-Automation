@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Ubuntu or Nginx and Chatbot Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Digital_Blue_Mettalic_Silver.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="flex-container">
+        <div>
+            <h1>Choose Ubuntu or Nginx</h1>
+            <form action="/select" method="post">
+                <button type="submit" name="choice" value="ubuntu" class="submit-button">Ubuntu</button>
+                <button type="submit" name="choice" value="nginx" class="submit-button">Nginx</button>
+            </form>
+        
+            <h1>Select Docker Image</h1>
+            <div class="flex-container-in">
+                <div>
+                    <form action="/create_container" method="post">
+                        <select id="docker-images" name="docker_image_choice">
+                            {% for image in images %}
+                                <option value="{{ image['ID'] }}">{{ image['Repository'] }}:{{ image['Tag'] }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="submit-button">Create Container</button>
+                    </form>
+                </div>
+                <div>
+                    <button onclick="refreshList()" class="submit-button">Refresh List</button>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h1>Write a new Image</h1>
+            <form action="/write_image" method="post">
+                <textarea id="write_image" name="write_image" class="dynamic-textarea"></textarea><br><br>
+                <button type="submit" class="submit-button">Write Dockerfile</button>
+            </form>
+        
+            <h1>Write a name:tag for Docker image </h1>
+            <form action="/generate_image" method="post">
+                <textarea id="image_creation_input" name="image_creation_input" class="dynamic-textarea"></textarea><br><br>
+                <button type="submit" class="submit-button">generate_image</button>
+            </form>
+        
+            <h1>Jarvis 1.0</h1>
+            <div class="chat-container">
+                <div class="messages" id="messages"></div>
+                <div class="input-container">
+                    <input type="text" id="user-input" placeholder="Type a message" />
+                    <button onclick="sendMessage()" class="submit-button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

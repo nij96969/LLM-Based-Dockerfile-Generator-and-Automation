@@ -1,0 +1,142 @@
+:root {
+    --primary-color: #00BFFF; /* Deep Sky Blue */
+    --secondary-color: #32CD32; /* Lime Green */
+    --accent-color: #000000; /* Black */
+    --neutral-color: #F0F8FF; /* Alice Blue */
+    --highlight-color: #00FFFF; /* Cyan */
+    --background-dark: #364136; /* Dark background */
+    --message-color: rgb(84, 239, 245); /* Message text color */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: var(--accent-color); /* Black */
+    color: var(--neutral-color); /* Alice Blue */
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container > div {
+    background-color: var(--background-dark); /* Dark background */
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.chat-container {
+    max-width: 700px;
+    /* padding: 3%; */
+    margin: 20px auto;
+}
+
+.messages {
+    white-space: pre-wrap;
+    border: 1px solid var(--accent-color); /* Black */
+    border-radius: 10px;
+    background-color: rgb(96, 100, 105);
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.input-container {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-top: 15px;
+}
+
+#user-input {
+    flex-grow: 1; /* Allow the input to take up the remaining space */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid var(--accent-color); /* Border color */
+    border-radius: 5px 0 0 5px; /* Rounded left corners */
+    font-size: 16px; /* Font size */
+    color: var(--accent-color); /* Text color */
+    background-color: var(--neutral-color); /* Background color */
+}
+
+.input-container button {
+    background-color: var(--primary-color); /* Deep Sky Blue */
+    color: var(--accent-color); /* Black */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 0 5px 5px 0; /* Rounded right corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.input-container button:hover {
+    background-color: var(--highlight-color); /* Cyan */
+}
+
+.message {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Select Dropdown */
+select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the select */
+    border: 1px solid var(--accent-color); /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    color: var(--accent-color); /* Text color */
+    background-color: var(--neutral-color); /* Background color */
+    margin-bottom: 15px; /* Space below the select dropdown */
+}
+
+.user-container {
+    display: flex;
+    justify-content: flex-end; /* Align messages to the right */
+}
+
+.user-message, .bot-message {
+    color: var(--message-color); /* Message text color */
+    background-color: var(--background-dark); /* Dark background */
+    border-radius: 20px;
+    width: fit-content;
+    padding: 3%;
+}
+
+.dynamic-textarea {
+    width: 100%; /* Full width */
+    height: 150px; /* Initial height */
+    overflow: auto; /* Allow for overflow scrolling */
+    background-color: var(--neutral-color);
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.button, .submit-button {
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.submit-button {
+    background-color: var(--primary-color); /* Deep Sky Blue */
+    color: var(--accent-color); /* Black */
+}
+
+.submit-button:hover {
+    background-color: var(--highlight-color); /* Cyan */
+}
+
+.link {
+    color: var(--secondary-color); /* Lime Green */
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--highlight-color); /* Cyan */
+}

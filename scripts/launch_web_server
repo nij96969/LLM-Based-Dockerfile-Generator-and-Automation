@@ -1,0 +1,20 @@
+#!/bin/bash
+container_port=$(bash scripts/find_ports)
+if [ -n "$container_port" ] && [ "$container_port" != "-1" ]; then
+    container_id=$(docker run -dit -p $container_port:80 nginx:latest)
+    container_ip_addr=$(docker container inspect -f '{{ .NetworkSettings.IPAddress }}' $container_id)
+    container_port=$(echo $container_port | cut -d'/' -f 1)
+    echo "Container id :: $container_id"
+    echo "IP address :: $container_ip_addr"
+    echo "Container Port :: $container_port"
+
+else
+    echo "No available ports found in the specified range." >&2
+fi
+
+# container_id=$(docker run -dit -p  nginx:latest)
+# container_ip_addr=$(docker container inspect -f '{{ .NetworkSettings.IPAddress }}' $container_id)
+# container_port=$(echo $container_port | cut -d'/' -f 1)
+# echo "Container id :: $container_id"
+# echo "IP address :: $container_ip_addr"
+# echo "Container Port :: $container_port"
